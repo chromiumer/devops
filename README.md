@@ -64,7 +64,7 @@ brew install wireguard-tools
 cat <<EOF>> /etc/wireguard/wg0.conf
 [Interface]
 PrivateKey = client-private-key
-Address = 1.1.1.1/32
+Address = 1.1.1.2/32
 DNS = 8.8.8.8
 DNS = 8.8.4.4
 DNS = 114.114.114.114
