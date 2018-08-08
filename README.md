@@ -31,7 +31,6 @@ PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o
 PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE;
 ListenPort = 12222
 PrivateKey = server-private-key
-
 EOF
 ```
 >ps: server-private-key //using cmd  wg genkey gen。
