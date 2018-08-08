@@ -55,6 +55,14 @@ interface: wg0
   listening port: 12222
 ```
 
+after client config complete. set server peer like this.
+
+>wg set wg0 peer client-public-key  allowed-ips 10.0.0.2/32
+
+remove some peer.
+
+>wg set wg0 peer client-public-key remove
+
 ---
 
 Client
