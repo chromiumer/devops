@@ -35,6 +35,12 @@ EOF
 ```
 >ps: server-private-key //using cmd  wg genkey gen。
 
+open route forward.
+```
+echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
+sysctl -p
+```
+
 3.start&stop wg0
 ```
 wg-quick up wg0
@@ -81,6 +87,14 @@ ps: client-private-key  //using cmd  wg genkey gen。
 ```
 wg-quick up wg0
 wg-quick down wg0
+```
+
+ps:
+By default, all client routes will be proxied out, and the routes will need to be modified so that only the remote host will take the wg0 network card
+
+```
+route -n delete -inet 0.0.0.0/1
+route -q -n add -inet 10.0.0/24 -interface utun5
 ```
 
 
