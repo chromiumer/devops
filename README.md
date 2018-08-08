@@ -73,6 +73,7 @@ DNS = 114.114.114.114
 PublicKey = 3XlABR57aaYwlSD69uAYXn93alg/qUt03wEIjGyAaD0=
 Endpoint = server-ip:12222
 AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 30
 EOF
 ```
 ps: client-private-key  //using cmd  wg genkey gen。
