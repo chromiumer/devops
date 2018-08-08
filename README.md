@@ -1,11 +1,11 @@
 
 # wireguard
 
+##WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
 
-Server端
+Server
 
-1.安装包
-以Centos7为例
+1.Install packages(Centos7)
 
 ```
 curl -Lo /etc/yum.repos.d/wireguard.repo https://copr.fedorainfracloud.org/coprs/jdoss/wireguard/repo/epel-7/jdoss-wireguard-epel-7.repo
@@ -16,12 +16,12 @@ yum -y update
 reboot
 ```
 
-验证内核模块
+check kernel mod.
 ```
 modprobe wireguard && lsmod | grep wireguard
 ```
 
-2.配置文件
+2.config file.
 ```
 cat <<EOF>> /etc/wireguard/wg0.conf
 [Interface]
@@ -34,14 +34,15 @@ PrivateKey = server-private-key
 
 EOF
 ```
->ps: server-private-key 使用wg genkey生成。
+>ps: server-private-key //using cmd  wg genkey gen。
 
 3.start&stop wg0
-
+```
 wg-quick up wg0
 wg-quick down wg0
+```
 
-wg 检查服务
+wg //check wg server
 ```
 interface: wg0
   public key: 3XlABR57aaYwlSD69uAYXn93alg/qUt03wEIjGyAaD0=
@@ -49,20 +50,16 @@ interface: wg0
   listening port: 12222
 ```
 
-
-
-参考：https://www.wireguard.com/install/
-
 ---
 
-Client端
+Client
 
-1.安装 以MacOS为例
+1.Install packages(MacOS)
 ```
 brew install wireguard-tools
 ```
 
-2.配置文件
+2.config file.
 ```
 cat <<EOF>> /etc/wireguard/wg0.conf
 [Interface]
@@ -78,10 +75,13 @@ Endpoint = server-ip:12222
 AllowedIPs = 0.0.0.0/0
 EOF
 ```
-ps: client-private-key 使用wg genkey生成。
+ps: client-private-key  //using cmd  wg genkey gen。
 
 3.start&stop wg0
-
+```
 wg-quick up wg0
 wg-quick down wg0
+```
 
+
+Ref：https://www.wireguard.com/install/
