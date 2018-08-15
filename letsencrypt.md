@@ -13,7 +13,7 @@ python setup.py install
 
 ```
 
-2.gen domain chanins
+2. gen domain chanins
 
 ```
 
@@ -26,6 +26,8 @@ cat <<EOF>> /root/certbot/xxxxx
 yyyyyy
 EOF
 
+
+nginx config location below:
 
 ...
 
@@ -41,7 +43,7 @@ location = /.well-known/acme-challenge/ {
 ...
 ```
 
-3.config nginx
+3. config nginx
 
 ```
 server {
