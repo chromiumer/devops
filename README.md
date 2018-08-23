@@ -5,9 +5,10 @@
 ##### 3. [wireguard](https://github.com/chromiumer/devops/blob/master/reference/wireguard.md)  
 
 
-
+```
 * WeChat Pay
 <img src="https://github.com/chromiumer/devops/blob/master/reference/wx.png" width="160">
 
 * Alipay
 <img src="https://github.com/chromiumer/devops/blob/master/reference/ali.png" width="160">
+```
