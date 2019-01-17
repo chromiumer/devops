@@ -51,6 +51,7 @@ interface: wg0
 after client config complete. set server peer like this.
 
 >wg set wg0 peer client-public-key  allowed-ips 10.0.0.2/32
+
 >wg set wg0 peer client-public-key remove
 
 ---
