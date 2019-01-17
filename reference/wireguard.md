@@ -30,11 +30,10 @@ SaveConfig = true
 PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE;
 PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE;
 ListenPort = 12222
-PrivateKey = server-private-key
+PrivateKey = sAH6lJGDoLxgOuCTy3vnj7HS+H41Ne98zwCluH7pHVs=
 EOF
 ```
->ps: server-private-key //using cmd  wg genkey gen。
-wg genkey | tee private | wg pubkey > public.key
+>ps: wg genkey | tee private | wg pubkey > public.key
 
 open route forward.
 ```
