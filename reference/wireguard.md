@@ -7,8 +7,6 @@ curl -Lo /etc/yum.repos.d/wireguard.repo https://copr.fedorainfracloud.org/coprs
 yum -y install epel-release
 yum -y install wireguard-dkms wireguard-tools
 yum -y update
-
-reboot
 ```
 
 check kernel mod.
@@ -81,7 +79,7 @@ AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 30
 EOF
 ```
-ps: client-private-key  //using cmd  wg genkey gen。
+>ps: wg genkey | tee private | wg pubkey > public.key
 
 3.start&stop wg0
 ```
