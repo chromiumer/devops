@@ -34,6 +34,7 @@ PrivateKey = server-private-key
 EOF
 ```
 >ps: server-private-key //using cmd  wg genkey gen。
+wg genkey | tee private | wg pubkey > public.key
 
 open route forward.
 ```
