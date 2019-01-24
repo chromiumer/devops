@@ -7,7 +7,7 @@
 
 
 <br /><br /><br /><br /><br />
-免费梯子自取：https://console.uk.to/
+免费梯子自取：https://console.us.to/
 
 * WeChat Pay
 <img src="https://github.com/chromiumer/devops/blob/master/reference/wx.png" width="160">
