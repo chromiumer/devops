@@ -1,10 +1,10 @@
 
 ## let's encrypt
 
-
-```
 1. install unit
 
+
+```
 yum install gcc gcc-c++ libffi-devel python-devel openssl-devel
 
 git clone https://github.com/certbot/certbot
