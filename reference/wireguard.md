@@ -53,9 +53,9 @@ interface: wg0
 
 after client config complete. set server peer like this.
 
->wg set wg0 peer client-public-key  allowed-ips 10.0.0.2/32
+>wg set wg0 peer client-public-key  allowed-ips 1.1.1.2/32  //add client
 
->wg set wg0 peer client-public-key remove
+>wg set wg0 peer client-public-key remove //delete client
 
 ---
 
@@ -83,7 +83,7 @@ AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 30
 EOF
 ```
->ps: wg genkey | tee private | wg pubkey > public.key
+>generate private&public key: wg genkey | tee wireguard-private.key | wg pubkey > wireguarrd-public.key
 
 3.start&stop wg0
 ```
