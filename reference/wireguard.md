@@ -1,4 +1,4 @@
-Server
+### Server
 
 1.Install packages(Centos7)
 
@@ -11,7 +11,10 @@ yum -y update
 
 check kernel mod.
 ```
-modprobe wireguard && lsmod | grep wireguard
+[root@localhost ~]# modprobe wireguard && lsmod | grep wireguard
+wireguard             217088  0
+ip6_udp_tunnel         16384  1 wireguard
+udp_tunnel             16384  1 wireguard
 ```
 
 2.config file.
@@ -26,7 +29,7 @@ ListenPort = 12222
 PrivateKey = sAH6lJGDoLxgOuCTy3vnj7HS+H41Ne98zwCluH7pHVs=
 EOF
 ```
->ps: wg genkey | tee private | wg pubkey > public.key
+>generate private&public key: wg genkey | tee wireguard-private.key | wg pubkey > wireguarrd-public.key
 
 open route forward.
 ```
@@ -56,7 +59,7 @@ after client config complete. set server peer like this.
 
 ---
 
-Client
+### Client
 
 1.Install packages(MacOS)
 ```
