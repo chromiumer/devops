@@ -26,7 +26,7 @@ SaveConfig = true
 PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE;
 PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE;
 ListenPort = 12222
-PrivateKey = sAH6lJGDoLxgOuCTy3vnj7HS+H41Ne98zwCluH7pHVs=
+PrivateKey = server-private-key
 EOF
 ```
 >generate private&public key: wg genkey | tee wireguard-private.key | wg pubkey > wireguarrd-public.key
@@ -46,7 +46,7 @@ wg-quick down wg0
 wg //check wg server
 ```
 interface: wg0
-  public key: 3XlABR57aaYwlSD69uAYXn93alg/qUt03wEIjGyAaD0=
+  public key: server-public-key
   private key: (hidden)
   listening port: 12222
 ```
@@ -77,7 +77,7 @@ DNS = 8.8.4.4
 DNS = 114.114.114.114
 
 [Peer]
-PublicKey = 3XlABR57aaYwlSD69uAYXn93alg/qUt03wEIjGyAaD0=
+PublicKey = server-public-key
 Endpoint = server-ip:12222
 AllowedIPs = 0.0.0.0/0
 PersistentKeepalive = 30
