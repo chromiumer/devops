@@ -82,3 +82,30 @@ http {
 
 }
 ```
+
+
+```
+server {
+        listen      80;
+        server_name domain.name;
+
+        access_log  logs/domain.name.access.log  json;
+        error_log   logs/domain.name.error.log;
+
+        location / {
+
+		proxy_pass http://1.1.1.1:8080;
+
+		error_page 403 /403.html;
+		        location = /403.html {
+		        root  html;
+		        allow all;
+		}
+
+		allow 2.2.2.2/32;
+		allow 3.3.3.0/24;
+		deny all;
+
+        }
+}
+```
